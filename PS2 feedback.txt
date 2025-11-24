@@ -1,0 +1,9 @@
+批改人：胡蓓慧
+学生：谢婷（12532753）
+得分：（45/50）
+扣分点：
+1.3 不应该将'Mo','Dy'为空的数据去除，这些数据只输出年份就行（-2分）
+2 没有正确地去除错误数据（-1分），需要先将'WIND-OBSERVATION speed rate'列的数值转为数值，再进行过滤才有效，代码如下所示，其他的列如'WIND-OBSERVATION direction quality code'也是一样的。
+WDSZ2['WIND-OBSERVATION speed rate'] = pd.to_numeric(WDSZ2['WIND-OBSERVATION speed rate'], errors='coerce')
+风速需要除以10来符合（m/s）单位（-1分）
+3 少一个变量分析（-1分）。data['CO2'].describe()这个不算statistical checks，只是对这一列的描述
